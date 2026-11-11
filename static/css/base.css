@@ -32,3 +32,10 @@ p {
 .kata-title {
   font-family: "DigiKata";
 }
+
+a {
+    color: rgb(0, 255, 47);
+}
+a:hover {
+    color: rgb(8, 129, 30);
+}
