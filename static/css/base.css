@@ -3,8 +3,18 @@
   src: url("../fonts/Digitalism_Thin.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "hacker";
+  src: url("../fonts/hacker.ttf");
+}
+
+@font-face {
+  font-family: "DigiKata";
+  src: url("../fonts/Digitalism_Katakana_Thin.ttf");
+}
+
 * {
-  margin: 5px;
+  margin: 5px 2px;
   padding: 5px;
   box-sizing: border-box;
 }
@@ -14,4 +24,11 @@ body {
   font-family: "Digital", sans-serif;
   color: rgb(0, 255, 47);
   font-size: 20px;
+}
+
+p {
+  font-family: "Hacker";
+}
+.kata-title {
+  font-family: "DigiKata";
 }
