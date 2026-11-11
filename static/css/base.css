@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Digital";
+  src: url("../fonts/Digitalism_Thin.ttf") format("truetype");
+}
+
+* {
+  margin: 5px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+body {
+  background: black;
+  font-family: "Digital", sans-serif;
+  color: rgb(0, 255, 47);
+  font-size: 20px;
+}
