@@ -10,7 +10,10 @@ def homepage():
 def objectives():
     return render_template('objectives.html')
 
-@app.route('/facts')
-def facts():
-    return render_template('/facts.html')
+@app.route('/search')
+def search():
+    planet = request.args.get('object')
+    
+    return render_template('research.html', planet=planet)
+
 app.run(debug=True)
