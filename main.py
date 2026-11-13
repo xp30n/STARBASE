@@ -12,6 +12,7 @@ def objectives():
 
 @app.route('/search')
 def search():
+    # UR MOOOOMMMMMMMMMMM
     planet = request.args.get('object')
     
     return render_template('research.html', planet=planet)
