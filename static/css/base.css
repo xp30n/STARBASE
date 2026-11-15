@@ -58,7 +58,6 @@ body {
 }
 
 .side-nav {
-  top: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -128,4 +127,26 @@ ul li a:hover {
 
 .footer-left {
   font-family: "Digital";
+}
+
+/*==================================================
+=                     STARDEX                      =
+==================================================*/
+
+body.scrollable-page {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.output {
+  font-family: "Hacker";
+}
+
+body.scrollable-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+body.scrollable-page::-webkit-scrollbar-thumb {
+  background: #39ff14;
+  border-radius: 4px;
 }
