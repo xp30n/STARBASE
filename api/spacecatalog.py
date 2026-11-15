@@ -10,6 +10,7 @@ randomStarInfo = {
         'constellation': None,
         'brightness': None
     }
+
 randomStar = None 
 starColours = ['red', 'orange', 'yellow', 'blue', 'white']
 starDistances = ['nearby', 'close', 'distant', 'extremely distant']
@@ -23,6 +24,8 @@ def fetch_stars():
 
     # Shows us the reponse as a dict
     data = response.json()
+    
+    # Empty list for random star generation
     ran_list = []
    
     for star in data["objects"]:
