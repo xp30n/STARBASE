@@ -15,4 +15,12 @@ def star_page():
     
     return render_template("star_page.html", stars=stars)
 
+@app.route('/assignments')
+def assignments():
+    return render_template("assignments.html")
+
+@app.route('/database')
+def database():
+    return render_template("database.html")
+    
 app.run(debug=True)
