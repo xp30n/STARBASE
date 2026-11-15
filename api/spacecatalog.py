@@ -5,12 +5,14 @@ from random import choice
 randomStarInfo = {
         'name': None,
         'colour': None,
-        'location': None,
+        'distance': None,
         'constellation': None,
         'brightness': None
     }
 randomStar = None 
 starColours = ['red', 'orange', 'yellow', 'blue', 'white']
+starDistances = ['nearby', 'close', 'distant', 'extremely distant']
+
 def fetch_stars():
     # Retrieves the spacecatalog API
     url = "https://spacecatalog.org/api/v1/objects?category=star&limit=200"
@@ -25,9 +27,19 @@ def fetch_stars():
     for star in data["objects"]:
         ran_list.append(star)
     randomStar = random.choice(ran_list)
-
+    # Sets the randomStarInfo name
     randomStarInfo["name"] = randomStar['name']
-    
+    # Sets the randomStarInfo constellation
+    randomStarInfo['constellation'] = randomStar['constellation']
+    # Sets the randomStarInfo distance value
+    if randomStar['distance_ly'] < 50:
+        randomStarInfo['distance'] = starDistances[0]
+    if 50 <= randomStar['distance_ly'] < 500:
+        randomStarInfo['distance'] = starDistances[1]
+    if 500 <= randomStar['distance_ly'] < 1000:
+        randomStarInfo['distance'] = starDistances[2]
+    if randomStar['distance_ly'] >= 1000:
+         randomStarInfo['distance'] = starDistances[2]
     # Check if the star colour name  in the randomStars' object_type matches the name in the starColours list and set the randomStarInfo['colour'] to that colour
     # Checks all the colours in the star colour list
     for colour in starColours:
