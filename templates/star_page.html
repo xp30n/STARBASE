@@ -1,11 +1,16 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 
 <!-- <p>STAR: {{ stars[0]["name"] }}</p> -->
-
+<p>Random Star: {{randomStar["name"]}}</p>
+<p>Random Star Colour: {{randomStar["colour"]}}</p>
+<p>Random Star Location: {{randomStar["name"]}} </p>
+<p>Random Star Constellation: {{randomStar["name"]}}</p>
+<p>Random Star Brightness: {{randomStar["name"]}} </p>
 {% for star in stars %}
 <ul>
-  <li>STAR: {{ star["name"], star["mag"] }}</li>
+  <li>STAR: {{ star["name"], star["mag"], star["object_type"] }}</li>
 </ul>
-{% endfor %} 
+{% endfor %}
 
 {% endblock %}
