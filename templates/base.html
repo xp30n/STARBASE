@@ -10,17 +10,23 @@
     <title>STARBASE</title>
   </head>
   <h1>STARBASE</h1>
-  <h3 class="kata-title">STARBASE</h3>
   <body>
     <header>
-      <nav>
-        <a href="{{ url_for('homepage') }}">HOME</a>
-        <a href="{{ url_for('star_page') }}">STARS</a>
+      <nav class="side-nav">
+        <section class="nav-top">
+          <ul>
+            <li><a href="{{ url_for('homepage') }}"> > HOME</a></li>
+            <li><a href="{{ url_for('assignments') }}"> > ASSIGNMENTS</a></li>
+            <li><a href="{{ url_for('database') }}"> > STARDEX</a></li>
+          </ul>
+        </section>
       </nav>
     </header>
 
     <main>{% block content %} {% endblock %}</main>
 
-    <footer>STARBASE // END OF TRANSMISSION</footer>
+    <footer class="page-footer">
+      <p class="footer-left">STARBASE // END OF TRANSMISSION</p>
+    </footer>
   </body>
 </html>
