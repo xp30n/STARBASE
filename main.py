@@ -19,5 +19,4 @@ def star_page():
 def assignments():
     return render_template("assignments.html")
 
-
 app.run(debug=True)
