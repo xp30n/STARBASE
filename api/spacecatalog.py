@@ -12,7 +12,7 @@ randomStarInfo = {
     }
 
 randomStar = None 
-starColours = ['red', 'orange', 'yellow', 'blue', 'white']
+starColours = ['red', 'orange', 'yellow', 'yellow-white', 'blue', 'blue-white', 'white']
 starDistances = ['nearby', 'close', 'distant', 'extremely distant']
 
 def fetch_stars():
