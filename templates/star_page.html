@@ -1,23 +1,7 @@
-{% extends "base.html" %} 
+{% extends "base.html" %}
 
 {% block body_class %}scrollable-page{% endblock %}
 
-{%block content %}
-
-<div class="star-page">
-  <div class="output">
-    <!-- <p>STAR: {{ stars[0]["name"] }}</p> -->
-    <p>Random Star: {{randomStar["name"]}}</p>
-    <p>Random Star Colour: {{randomStar["colour"]}}</p>
-    <p>Random Star Distance: {{randomStar["distance"]}}</p>
-    <p>Random Star Constellation: {{randomStar["constellation"]}}</p>
-    <p>Random Star Brightness: {{randomStar["brightness"]}}</p>
-    {% for star in stars %}
-    <ul>
-      <!-- <li>STAR: {{ star["name"], star["mag"], star["object_type"] }}</li> -->
-    </ul>
-    {% endfor %}
-  </div>
-</div>
-
+{% block content %}
+<p>pokedex hoe</p>
 {% endblock %}

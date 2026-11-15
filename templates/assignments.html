@@ -1,7 +1,22 @@
-{% extends "base.html" %}
+{% extends "base.html" %} 
 
-{% block content %}
+{% block body_class %}scrollable-page{% endblock %}
 
-<p>VIEW ALL YOUR ASSIGNMENTS</p>
+{%block content %}
+
+<div class="star-page">
+  <div class="output">
+    <p>Random Star: {{randomStar["name"]}}</p>
+    <p>Random Star Colour: {{randomStar["colour"]}}</p>
+    <p>Random Star Distance: {{randomStar["distance"]}}</p>
+    <p>Random Star Constellation: {{randomStar["constellation"]}}</p>
+    <p>Random Star Brightness: {{randomStar["brightness"]}}</p>
+    {% for star in stars %}
+    <ul>
+      
+    </ul>
+    {% endfor %}
+  </div>
+</div>
 
 {% endblock %}
