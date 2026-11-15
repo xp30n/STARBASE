@@ -10,9 +10,9 @@ randomStarInfo = {
         'constellation': None,
         'brightness': None
     }
-
+    
 randomStar = None 
-starColours = ['red', 'orange', 'yellow', 'yellow-white', 'blue', 'blue-white', 'white']
+starColours = ['red', 'orange', 'yellow-white', 'yellow', 'blue-white', 'blue', 'white']
 starDistances = ['Nearby', 'Close', 'Distant', 'Extremely Distant']
 starMag = ['Dim', 'Moderately Bright', 'Bright', 'Very Bright']
 
@@ -37,7 +37,9 @@ def fetch_stars():
     
     return ran_list, randomStarInfo
 
+
 def assignStarInfo(randomizedStar):
+    
     # NAME
     randomStarInfo["name"] = randomizedStar['name']
 
@@ -71,15 +73,15 @@ def assignStarInfo(randomizedStar):
         randomStarInfo['distance'] = starDistances[0]
         
     # CLOSE
-    if 10 <= randomizedStar['distance_ly'] < 50:
+    elif 10 <= randomizedStar['distance_ly'] < 50:
         randomStarInfo['distance'] = starDistances[1]
         
     # DISTANT
-    if 50 <= randomizedStar['distance_ly'] < 100:
+    elif 50 <= randomizedStar['distance_ly'] < 1000:
         randomStarInfo['distance'] = starDistances[2]
         
     # EXTREMELY DISTANT
-    if randomizedStar['distance_ly'] >= 1000:
+    else:
         randomStarInfo['distance'] = starDistances[3]
         
          
