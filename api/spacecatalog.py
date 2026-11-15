@@ -1,5 +1,8 @@
 import requests, random
 
+# =================================
+# STAR CATEGORIES
+# =================================
 randomStarInfo = {
         'name': None,
         'colour': None,
@@ -36,37 +39,52 @@ def fetch_stars():
 
 def assignStarInfo(randomizedStar):
     # NAME
-    # Sets the randomStarInfo name
     randomStarInfo["name"] = randomizedStar['name']
 
-    # CONSTELLATION
-    # Sets the randomStarInfo constellation
+    # CONSTELLATION 
     randomStarInfo['constellation'] = randomizedStar['constellation']
     
-    # BRIGHTNESS
-    #sets the randomMagInfo brightness
-    randomStarInfo['brightness'] = randomizedStar['mag']
     
+    # MAGNITUDE / BRIGHTNESS
+    # DIM
+    # =================================
     if randomizedStar['mag'] >= 5:
         randomStarInfo['brightness'] = starMag[0]
+        
+    # MODERATELY BRIGHT
+    elif 2 <= randomizedStar['mag'] <= 5:
+        randomStarInfo['brightness'] = starMag[1]
+        
+    # BRIGHT
+    elif 0 <= randomizedStar['mag'] <= 2:
+        randomStarInfo['brightness'] = starMag[2]
+        
+    # VERY BRIGHT
+    else:
+        randomStarInfo['brightness'] = starMag[3]
     
+        
     # DISTANCE
-    # Sets the randomStarInfo distance value
     # NEARBY
+    # =================================
     if randomizedStar['distance_ly'] < 10:
         randomStarInfo['distance'] = starDistances[0]
+        
     # CLOSE
-    elif 10 <= randomizedStar['distance_ly'] < 50:
+    if 10 <= randomizedStar['distance_ly'] < 50:
         randomStarInfo['distance'] = starDistances[1]
+        
     # DISTANT
-    elif 50 <= randomizedStar['distance_ly'] < 100:
+    if 50 <= randomizedStar['distance_ly'] < 100:
         randomStarInfo['distance'] = starDistances[2]
+        
     # EXTREMELY DISTANT
-    else:
-        if randomizedStar['distance_ly'] >= 1000:
-            randomStarInfo['distance'] = starDistances[3]
+    if randomizedStar['distance_ly'] >= 1000:
+        randomStarInfo['distance'] = starDistances[3]
+        
          
-    # Check if the star colour name  in the randomStars' object_type matches the name in the starColours list and set the randomStarInfo['colour'] to that colour
+    # Check if the star colour name  in the randomStars' object_type matches the name in the 
+    # starColours list and set the randomStarInfo['colour'] to that colour
     # Checks all the colours in the star colour list
     for colour in starColours:
         # Checks if that colour exists in the object_type string
