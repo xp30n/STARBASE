@@ -11,7 +11,6 @@ def homepage():
 
 @app.route('/stars')
 def star_page():
-    # Tuple unpackaging
     stars, randomStar = fetch_stars()
     
     return render_template("star_page.html", stars=stars, randomStar= randomStar)
@@ -20,8 +19,5 @@ def star_page():
 def assignments():
     return render_template("assignments.html")
 
-@app.route('/database')
-def database():
-    return render_template("database.html")
     
 app.run(debug=True)

@@ -2,6 +2,7 @@ import requests
 # IMPORT RANDOM MODULE
 import random
 from random import choice
+
 randomStarInfo = {
         'name': None,
         'colour': None,
@@ -11,6 +12,7 @@ randomStarInfo = {
     }
 randomStar = None 
 starColours = ['red', 'orange', 'yellow', 'blue', 'white']
+
 def fetch_stars():
     # Retrieves the spacecatalog API
     url = "https://spacecatalog.org/api/v1/objects?category=star&limit=200"
