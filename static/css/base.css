@@ -34,7 +34,7 @@ body {
   height: 100dvh;
 
   box-sizing: border-box;
-  border: solid rgb(0, 255, 47);
+  border: thick solid rgb(0, 255, 47);
 
   overflow: hidden;
 }
