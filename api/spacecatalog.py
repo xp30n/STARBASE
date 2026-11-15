@@ -1,7 +1,4 @@
-import requests
-# IMPORT RANDOM MODULE
-import random
-from random import choice
+import requests, random
 
 randomStarInfo = {
         'name': None,
@@ -13,7 +10,8 @@ randomStarInfo = {
 
 randomStar = None 
 starColours = ['red', 'orange', 'yellow', 'yellow-white', 'blue', 'blue-white', 'white']
-starDistances = ['nearby', 'close', 'distant', 'extremely distant']
+starDistances = ['Nearby', 'Close', 'Distant', 'Extremely Distant']
+starMag = ['Dim', 'Moderately Bright', 'Bright', 'Very Bright']
 
 def fetch_stars():
     # Retrieves the spacecatalog API
@@ -33,14 +31,7 @@ def fetch_stars():
     randomStar = random.choice(ran_list)
 
     assignStarInfo(randomStar)
-
-   
     
-    # star_name = star["name"]
-    # star_type = star["object_type"]
-    # star_dist = star["distance_ly"]
-    # star_mag = star["mag"]
-    # star_const = star["constellation"]
     return ran_list, randomStarInfo
 
 def assignStarInfo(randomizedStar):
@@ -51,21 +42,29 @@ def assignStarInfo(randomizedStar):
     # CONSTELLATION
     # Sets the randomStarInfo constellation
     randomStarInfo['constellation'] = randomizedStar['constellation']
-
+    
+    # BRIGHTNESS
+    #sets the randomMagInfo brightness
+    randomStarInfo['brightness'] = randomizedStar['mag']
+    
+    if randomizedStar['mag'] >= 5:
+        randomStarInfo['brightness'] = starMag[0]
+    
     # DISTANCE
     # Sets the randomStarInfo distance value
     # NEARBY
-    if randomizedStar['distance_ly'] < 30:
+    if randomizedStar['distance_ly'] < 10:
         randomStarInfo['distance'] = starDistances[0]
     # CLOSE
-    if 30 <= randomizedStar['distance_ly'] < 200:
+    elif 10 <= randomizedStar['distance_ly'] < 50:
         randomStarInfo['distance'] = starDistances[1]
     # DISTANT
-    if 200 <= randomizedStar['distance_ly'] < 800:
+    elif 50 <= randomizedStar['distance_ly'] < 100:
         randomStarInfo['distance'] = starDistances[2]
     # EXTREMELY DISTANT
-    if randomizedStar['distance_ly'] >= 800:
-         randomStarInfo['distance'] = starDistances[2]
+    else:
+        if randomizedStar['distance_ly'] >= 1000:
+            randomStarInfo['distance'] = starDistances[3]
          
     # Check if the star colour name  in the randomStars' object_type matches the name in the starColours list and set the randomStarInfo['colour'] to that colour
     # Checks all the colours in the star colour list
