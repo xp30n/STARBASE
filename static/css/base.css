@@ -139,6 +139,61 @@ p {
 }
 
 /*==================================================
+=                 ASSIGNMENTS                      =
+==================================================*/
+.formContainer {
+  border: thick solid rgb(0, 255, 47);
+  border-radius: 5px;
+  /* color: white; */
+  width: 30%;
+  margin-top: 20px;
+  padding: 10px;
+}
+
+label {
+  font-family: "Digital";
+  font-size: clamp(11px, 1.1vw, 17px);
+}
+
+input[type=text] {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  box-sizing: border-box;
+  background-color: black;
+  color: white;
+  font-family: "Hacker";
+  border: 2px solid rgb(0, 255, 47);
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+input[type=text]:focus {
+  outline: 2px solid rgb(173, 243, 185);
+  outline-offset: 2px;
+}
+
+input[type=submit] {
+  background-color: #000000;
+  transition: outline 0.3s ease-in-out, color 0.3s ease-in-out;
+  border: 2px solid rgb(0, 255, 47);
+  color: white;
+  padding: 5px;
+  font-family: "Hacker";
+  margin-left: 3px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 20px;
+}
+
+input[type=submit]:hover {
+  outline: 2px solid rgb(173, 243, 185);
+  outline-offset: 2px;
+  /* background-color: #ffffff; */
+  color: rgb(0, 255, 47);
+}
+
+/*==================================================
 =                     STARDEX                      =
 ==================================================*/
 
