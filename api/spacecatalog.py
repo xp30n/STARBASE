@@ -1,7 +1,7 @@
-import json
+import json, random
 from api.starGuess import fetch_stars, assignStarInfo
 
-stars, randomStarInfo = fetch_stars()
+stars = fetch_stars()
 
 # Filter out the stars with special characters
 filtered_stars = []
@@ -15,3 +15,6 @@ for star in stars:
 for star in filtered_stars:
     starInfo = assignStarInfo(star)
     star.update(starInfo)
+
+# randomStar = random.choice(filtered_stars)
+# assignStarInfo(randomStar)

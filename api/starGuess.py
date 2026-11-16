@@ -1,5 +1,6 @@
 import requests, random
 
+# from api.spacecatalog import filtered_stars
 # =================================
 # STAR CATEGORIES
 # =================================
@@ -31,11 +32,11 @@ def fetch_stars():
    
     for star in data["objects"]:
         ran_list.append(star)
-    randomStar = random.choice(ran_list)
+    # randomStar = random.choice(filtered_stars)
 
-    assignStarInfo(randomStar)
+    # assignStarInfo(randomStar)
     
-    return ran_list, randomStarInfo
+    return ran_list
 
 
 def assignStarInfo(randomizedStar):
