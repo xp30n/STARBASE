@@ -11,6 +11,7 @@ app.secret_key = 'Leon_Kennedy_Starbase'
 def homepage():
     return render_template('index.html')
 
+
 @app.route('/stars', methods=["GET"])
 def star_page():
     stars = filtered_stars
@@ -23,6 +24,7 @@ def star_page():
                for value in star.values())
             ]
     return render_template("star_page.html", stars=stars, query=query)
+
 
 @app.route('/assignments')
 def assignments():
@@ -57,6 +59,7 @@ def assignments():
         session['redacted_fields'] = redacted_fields
     app.logger.info(session['starMatch'])
     return render_template("assignments.html", randomStar= randomStarInfoCopy, redactedFields=redacted_fields, starMatch = session['starMatch'])
+
 
 @app.route('/submitAssignments', methods = ['POST', 'GET'])
 def submit_assignments():
