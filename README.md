@@ -15,5 +15,16 @@ Thank you for your continued patronage.
 
 <img width="1669" height="388" alt="image" src="https://github.com/user-attachments/assets/2cb4cba6-ea0c-4797-885c-21bfef5374bc" />
 
+## Technologies Used
+- HTML5, CSS, JavaScript - Structure, interactivity and logic
+- Python & Flask - Backend
 
-<!-- Flask Midterm Project for CART 351 -->
+## APIS Used
+- SPACE CATALOG : https://spacecatalog.org
+
+## Authors
+Aliyah and Lanna !! 
+
+---
+
+*Copyright © 2026 Flask Midterm Project for CART 351.*
