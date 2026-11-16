@@ -18,22 +18,15 @@ def star_page():
 
 @app.route('/assignments')
 def assignments():
-    # session.pop('randomStar')
-    # session.pop('stars')
-    # session.clear()
+    # If there is no random star generated in the session
+    # Create a new one and 
     if 'randomStar' not in session:
         stars, randomStar = fetch_stars()
         session['randomStar'] = randomStar
-        session['stars'] = stars
     else:
         # The underscore doesnt overwrite the info in the current session
         stars, _ = fetch_stars()
-
-    
-    # app.logger.info(stars)
     randomStar = session['randomStar']
-    # stars = session['stars']
-    
     return render_template("assignments.html", stars=stars, randomStar= randomStar)
 
 app.run(debug=True)
