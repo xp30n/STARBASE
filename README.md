@@ -24,3 +24,6 @@ Thank you for your continued patronage.
 
 ## Authors
 Aliyah and Lanna !! 
+
+## Inspiration and Description
+
