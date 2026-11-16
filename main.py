@@ -28,6 +28,16 @@ def star_page():
 def assignments():
     # session.clear()
     # redacted_fields = None
+    if 'starMatch' in session:
+        session['starMatch'] =  session['starMatch']
+        # if session['starMatch']:
+        #     session['starMatch'] = False
+        #     session.pop('randomStar')
+        #     session.pop('redacted_fields')
+        
+    else:
+        session['starMatch'] = False
+
 
     # If there is a random star in session set the randomstar to that session key
     if 'randomStar' in session:
@@ -52,9 +62,8 @@ def assignments():
     else:
         redacted_fields = random.sample(redactable_fields, 2)
         session['redacted_fields'] = redacted_fields
-    app.logger.info(session['redacted_fields'])
-    
-    return render_template("assignments.html", randomStar= randomStarInfo, redactedFields=redacted_fields)
+    app.logger.info(session['starMatch'])
+    return render_template("assignments.html", randomStar= randomStarInfo, redactedFields=redacted_fields, starMatch = session['starMatch'])
 
 @app.route('/submitAssignments', methods = ['POST', 'GET'])
 def submit_assignments():
@@ -64,7 +73,28 @@ def submit_assignments():
          session['submittedNames'] = []
 
     session['submittedNames'].append(request.form['input_name'])
-    app.logger.info(session['submittedNames'])
+    currentGuess = session['submittedNames'][-1]
+    if session['randomStar']['name'].lower() == currentGuess.lower():
+        starMatch = True
+    else:
+        starMatch = False
+    app.logger.info(session['submittedNames'], starMatch)
+    session['starMatch'] = starMatch
     return redirect(url_for('assignments'))
+
+
+@app.route('/assignmentsDone', methods = ['POST', 'GET'])
+def did_assignments():
+    data = request.get_json()
+
+    button_clicked = data.get('buttonClicked')
+
+    if button_clicked:
+        session['starMatch'] = False
+        session.pop('randomStar')
+        session.pop('redacted_fields')
+        
+    return redirect(url_for('assignments'))
+
 
 app.run(debug=True)

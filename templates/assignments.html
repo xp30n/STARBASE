@@ -53,6 +53,35 @@
       <input type="submit" value="SUBMIT" />
     </form>
   </div>
+
+  {% if starMatch %}
+  <div class="congrats_popup" style="display: block">
+    <h2>CONGRATULATIONS</h2>
+    <P>You have successfully found the star with the missing information</P>
+    <p>Keep up the good work</p>
+    <button type="button" class="btn cancel" onclick="continueGame()">CONTINUE</button>
+  </div>
+  {% endif %}
+
 </div>
 
+<script>
+  function continueGame() {
+    fetch('/assignmentsDone', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        buttonClicked: true
+      })
+    })
+      .then(response => {
+        if (response.ok) {
+          document.querySelector(".congrats_popup").style.display = "none";
+        }
+      });
+  }
+
+</script>
 {% endblock %}

@@ -193,6 +193,46 @@ input[type=submit]:hover {
   color: rgb(0, 255, 47);
 }
 
+.congrats_popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45%;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: thick solid rgb(0, 255, 47);
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.congrats_popup p,
+h2,
+button {
+  text-align: center;
+  padding: 5px;
+}
+
+.congrats_popup h2 {
+  padding: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.congrats_popup button {
+  display: block;
+  margin: 10px auto;
+  cursor: pointer;
+  transition: background-colour 0.4s ease-in-out;
+}
+
+.congrats_popup button:hover {
+  outline: 2px solid rgb(173, 243, 185);
+  outline-offset: 2px;
+  background-color: rgb(62, 62, 62);
+}
+
 /*==================================================
 =                     STARDEX                      =
 ==================================================*/
