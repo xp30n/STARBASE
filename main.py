@@ -19,7 +19,8 @@ def star_page():
     if query:
         stars = [
             star for star in filtered_stars 
-            if query.lower() in star["name"].lower()
+            if any(query.lower() in str(value).lower()
+               for value in star.values())
             ]
     return render_template("star_page.html", stars=stars, query=query)
 
