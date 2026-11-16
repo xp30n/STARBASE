@@ -24,7 +24,3 @@ Thank you for your continued patronage.
 
 ## Authors
 Aliyah and Lanna !! 
-
----
-
-*Copyright © 2026 Flask Midterm Project for CART 351.*
