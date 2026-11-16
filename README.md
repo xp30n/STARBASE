@@ -13,6 +13,7 @@ Using your STARDEX, filter through the available star info and correctly input t
 
 Thank you for your continued patronage.
 
-## 
+<img width="1669" height="388" alt="image" src="https://github.com/user-attachments/assets/2cb4cba6-ea0c-4797-885c-21bfef5374bc" />
+
 
 <!-- Flask Midterm Project for CART 351 -->
