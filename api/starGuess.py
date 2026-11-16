@@ -61,7 +61,6 @@ def assignStarInfo(randomizedStar):
     else:
         randomStarInfo['brightness'] = starMag[3]
     
-        
     # DISTANCE
     # NEARBY
     # =================================
