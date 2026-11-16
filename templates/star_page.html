@@ -1,21 +1,26 @@
 {% extends "base.html" %} 
 
-{% block body_class %}scrollable-page{% endblock %} 
+{% block body_class %}scrollable-page{% endblock %}
 
 {%block content %}
 
+<form id="star-search" method="GET">
+  <input class="star-search" type="text" name="search" placeholder="SEARCH STARDEX" />
+  <button type="submit">SEARCH</button>
+</form>
+
 <div class="star-page">
-    <div class="output">
-      {% for star in stars %}
-      <h3 class="star-name">STAR: {{ star["name"] }}</h3>
-      <ul class="star-categories">
-        <li>COLOUR: {{ star["colour"] }}</li>
-        <li>DISTANCE: {{ star["distance"] }}</li>
-        <li>BRIGHTNESS: {{ star["brightness"] }}</li>
-        <li>CONSTELLATION: {{ star["constellation"] }}</li>
-      </ul>
-      {% endfor %}
-    </div>
+  <div class="output">
+    {% for star in stars %}
+    <h3 class="star-name">STAR: {{ star["name"] }}</h3>
+    <ul class="star-categories">
+      <li>COLOUR: {{ star["colour"] }}</li>
+      <li>DISTANCE: {{ star["distance"] }}</li>
+      <li>BRIGHTNESS: {{ star["brightness"] }}</li>
+      <li>CONSTELLATION: {{ star["constellation"] }}</li>
+    </ul>
+    {% endfor %}
   </div>
+</div>
 
 {% endblock %}

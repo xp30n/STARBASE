@@ -228,3 +228,33 @@ body.scrollable-page::-webkit-scrollbar-thumb {
   margin: 0 10px 20px;
   padding: 10px;
 }
+
+
+.star-search {
+  background-color: black;
+  border: solid 2px #39ff14;
+  margin: 20px;
+  padding: 15px;
+  width: 410px;
+  color: #39ff14;
+}
+
+.star-search::placeholder {
+  color: #39ff14;
+}
+
+.star-search:focus {
+  outline: none;
+  border: 2px solid #39ff14;
+  box-shadow: none;
+}
+
+/* Browser autofill styling */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px black inset;
+  -webkit-text-fill-color: #00ff41;
+  caret-color: #00ff41;
+}
