@@ -54,11 +54,11 @@ def assignStarInfo(randomizedStar):
         randomStarInfo['brightness'] = starMag[0]
         
     # MODERATELY BRIGHT
-    elif 2 <= randomizedStar['mag'] <= 5:
+    elif 2 <= randomizedStar['mag'] < 5:
         randomStarInfo['brightness'] = starMag[1]
         
     # BRIGHT
-    elif 0 <= randomizedStar['mag'] <= 2:
+    elif 0 <= randomizedStar['mag'] < 2:
         randomStarInfo['brightness'] = starMag[2]
         
     # VERY BRIGHT
@@ -69,15 +69,15 @@ def assignStarInfo(randomizedStar):
     # DISTANCE
     # NEARBY
     # =================================
-    if randomizedStar['distance_ly'] < 10:
+    if randomizedStar['distance_ly'] < 30:
         randomStarInfo['distance'] = starDistances[0]
         
     # CLOSE
-    elif 10 <= randomizedStar['distance_ly'] < 50:
+    elif 30 <= randomizedStar['distance_ly'] < 200:
         randomStarInfo['distance'] = starDistances[1]
         
     # DISTANT
-    elif 50 <= randomizedStar['distance_ly'] < 1000:
+    elif 200 <= randomizedStar['distance_ly'] < 1000:
         randomStarInfo['distance'] = starDistances[2]
         
     # EXTREMELY DISTANT
