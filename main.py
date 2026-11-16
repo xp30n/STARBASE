@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, session 
 
 from api.starGuess import fetch_stars
+from api.spacecatalog import filtered_stars
 
 app = Flask(__name__)
 app.secret_key = 'Leon_Kennedy_Starbase'
@@ -12,9 +13,8 @@ def homepage():
 
 @app.route('/stars')
 def star_page():
-
-    
-    return render_template("star_page.html")
+    stars, _ = fetch_stars()
+    return render_template("star_page.html", stars=filtered_stars)
 
 @app.route('/assignments')
 def assignments():

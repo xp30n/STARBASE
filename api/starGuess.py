@@ -39,7 +39,6 @@ def fetch_stars():
 
 
 def assignStarInfo(randomizedStar):
-    
     # NAME
     randomStarInfo["name"] = randomizedStar['name']
 
@@ -66,17 +65,18 @@ def assignStarInfo(randomizedStar):
     # DISTANCE
     # NEARBY
     # =================================
-    if randomizedStar['distance_ly'] < 30:
-        randomStarInfo['distance'] = starDistances[0]
-    # CLOSE
-    elif 30 <= randomizedStar['distance_ly'] < 200:
-        randomStarInfo['distance'] = starDistances[1]
-    # DISTANT
-    elif 200 <= randomizedStar['distance_ly'] < 1000:
-        randomStarInfo['distance'] = starDistances[2]
-    # EXTREMELY DISTANT
-    else:
-        randomStarInfo['distance'] = starDistances[3]
+    if randomizedStar['distance_ly'] is not None:
+        if randomizedStar['distance_ly'] < 30:
+            randomStarInfo['distance'] = starDistances[0]
+        # CLOSE
+        elif 30 <= randomizedStar['distance_ly'] < 200:
+            randomStarInfo['distance'] = starDistances[1]
+        # DISTANT
+        elif 200 <= randomizedStar['distance_ly'] < 1000:
+            randomStarInfo['distance'] = starDistances[2]
+        # EXTREMELY DISTANT
+        else:
+            randomStarInfo['distance'] = starDistances[3]
         
          
     # Check if the star colour name  in the randomStars' object_type matches the name in the 
@@ -89,3 +89,4 @@ def assignStarInfo(randomizedStar):
             randomStarInfo["colour"] = colour
             # Break out of the loop once the colour match is found
             break
+    return randomStarInfo

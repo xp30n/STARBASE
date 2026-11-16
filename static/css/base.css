@@ -78,6 +78,7 @@ li {
   opacity: 0.7;
   transition: opacity 0.2s ease;
   width: fit-content;
+  color: rgb(0, 255, 47);
 }
 
 li:hover {
@@ -158,4 +159,17 @@ body.scrollable-page::-webkit-scrollbar {
 body.scrollable-page::-webkit-scrollbar-thumb {
   background: #39ff14;
   border-radius: 4px;
+}
+
+.star-page {
+  padding: 10px 15px;
+}
+
+.star-name {
+  margin: 20px 10px -5px;
+}
+
+.star-categories {
+  margin: 0 10px 20px;
+  padding: 10px;
 }
