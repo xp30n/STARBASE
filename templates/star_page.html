@@ -9,6 +9,18 @@
   <button type="submit">SEARCH</button>
 </form>
 
+<h3>RESULTS FOR {{ query }}</h3>
+
+{% if stars %}
+  <ul>
+    {% for star in results %}
+      <li>{{ star }}</li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No Results Found.</p>
+  {% endif %}
+
 <div class="star-page">
   <div class="output">
     {% for star in stars %}

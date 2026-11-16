@@ -185,12 +185,14 @@ body.scrollable-page::-webkit-scrollbar-thumb {
 
 .star-search::placeholder {
   color: #39ff14;
+  font-family: "Hacker";
 }
 
 .star-search:focus {
   outline: none;
   border: 2px solid #39ff14;
   box-shadow: none;
+  font-family: "Hacker";
 }
 
 /* Browser autofill styling */
@@ -201,4 +203,12 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 1000px black inset;
   -webkit-text-fill-color: #00ff41;
   caret-color: #00ff41;
+}
+
+button {
+  background: black;
+  outline: none;
+  color: #39ff14;
+  padding: 10px;
+  border: 2px solid #39ff14;
 }

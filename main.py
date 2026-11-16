@@ -9,13 +9,19 @@ app.secret_key = 'Leon_Kennedy_Starbase'
 
 @app.route('/')
 def homepage():
-    
     return render_template('index.html')
 
-@app.route('/stars')
+@app.route('/stars', methods=["GET"])
 def star_page():
-    stars = fetch_stars()
-    return render_template("star_page.html", stars=filtered_stars)
+    stars = filtered_stars
+    query = request.args.get("search", "").strip()
+    
+    if query:
+        stars = [
+            star for star in filtered_stars 
+            if query.lower() in star["name"].lower()
+            ]
+    return render_template("star_page.html", stars=stars, query=query)
 
 @app.route('/assignments')
 def assignments():
