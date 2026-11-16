@@ -46,7 +46,6 @@ def assignStarInfo(randomizedStar):
     # CONSTELLATION 
     randomStarInfo['constellation'] = randomizedStar['constellation']
     
-    
     # MAGNITUDE / BRIGHTNESS
     # DIM
     # =================================
