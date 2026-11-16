@@ -86,7 +86,7 @@ def assignStarInfo(randomizedStar):
         # Checks if that colour exists in the object_type string
         if colour in randomizedStar["object_type"]:
             # If it exists set that colour match to be the randomstars' colour info
-            randomStarInfo["colour"] = colour
+            randomStarInfo["colour"] = colour.capitalize()
             # Break out of the loop once the colour match is found
             break
     return randomStarInfo
