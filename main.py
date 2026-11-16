@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import random
 
-from api.starGuess import fetch_stars, assignStarInfo
+from api.starGuess import fetch_stars, assignStarInfo, randomStarInfo
 from api.spacecatalog import filtered_stars
 
 app = Flask(__name__)
@@ -28,29 +28,22 @@ def star_page():
 def assignments():
     # session.clear()
     # redacted_fields = None
-    if 'starMatch' in session:
-        session['starMatch'] =  session['starMatch']
-        # if session['starMatch']:
-        #     session['starMatch'] = False
-        #     session.pop('randomStar')
-        #     session.pop('redacted_fields')
+    if 'starMatch' not in session:
+         session['starMatch'] = False
         
-    else:
-        session['starMatch'] = False
-
-
     # If there is a random star in session set the randomstar to that session key
     if 'randomStar' in session:
-         randomStarInfo = session['randomStar']
+         randomStarInfoCopy = session['randomStar']
     # If there is no random star generated in the sesssion create a new one
     else:
-        stars = fetch_stars()
         # Choose a random star from the filtered star list
         randomStar = random.choice(filtered_stars)
+        
+        assignStarInfo(randomStar)
         # Update the random star information 
-        randomStarInfo = assignStarInfo(randomStar)
+        randomStarInfoCopy = randomStarInfo.copy()
         # Save the info in a session's key
-        session['randomStar'] = randomStarInfo
+        session['randomStar'] = randomStarInfoCopy
 
     # The four characteristics that can be redacted
     redactable_fields = ["colour", "distance", "constellation", "brightness"]
@@ -63,7 +56,7 @@ def assignments():
         redacted_fields = random.sample(redactable_fields, 2)
         session['redacted_fields'] = redacted_fields
     app.logger.info(session['starMatch'])
-    return render_template("assignments.html", randomStar= randomStarInfo, redactedFields=redacted_fields, starMatch = session['starMatch'])
+    return render_template("assignments.html", randomStar= randomStarInfoCopy, redactedFields=redacted_fields, starMatch = session['starMatch'])
 
 @app.route('/submitAssignments', methods = ['POST', 'GET'])
 def submit_assignments():
@@ -83,18 +76,17 @@ def submit_assignments():
     return redirect(url_for('assignments'))
 
 
-@app.route('/assignmentsDone', methods = ['POST', 'GET'])
+@app.route('/assignmentsDone', methods = ['POST'])
 def did_assignments():
     data = request.get_json()
 
     button_clicked = data.get('buttonClicked')
 
-    if button_clicked:
+    if button_clicked and session.get('starMatch'):
         session['starMatch'] = False
         session.pop('randomStar')
         session.pop('redacted_fields')
         
-    return redirect(url_for('assignments'))
-
+    return '', 204
 
 app.run(debug=True)
