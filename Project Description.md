@@ -64,3 +64,7 @@ For instance, we created categories for star colours, distances, and brightness 
 <img width="1668" height="993" alt="Screenshot 2026-11-16 at 3 15 23 PM" src="https://github.com/user-attachments/assets/3ea58926-023a-409d-8e1d-98c6d875997a" />
 
 *Figure 7. The STARBASE completed assignments page.*
+
+<img width="762" height="845" alt="image" src="https://github.com/user-attachments/assets/41da02bf-5da5-4c39-8dcc-a3bb104e77bd" />
+
+*Figure 8. JSON file with the players' star guesses.*
