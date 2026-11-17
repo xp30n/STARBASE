@@ -27,4 +27,4 @@ Aliyah and Lanna !!
 
 ## Inspiration and Description
 
-[DESCRIPTION](https://github.com/xp30n/STARBASE/blob/main/Poject%20Description.md)
+[DESCRIPTION](https://github.com/xp30n/STARBASE/blob/main/Project%20Description.md)
