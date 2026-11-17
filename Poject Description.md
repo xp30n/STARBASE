@@ -44,20 +44,20 @@ For instance, we created categories for star colours, distances, and brightness 
 
 <img width="1669" height="998" alt="Screenshot 2026-11-16 at 3 15 40 PM" src="https://github.com/user-attachments/assets/c481bc32-f22e-44c2-95ca-faa6501538d6" />
 
-*Figure 2. The STARBASE main menu.*
+*Figure 2. The STARBASE home page.*
 
 <img width="503" height="120" alt="Screenshot 2026-11-16 at 3 16 02 PM" src="https://github.com/user-attachments/assets/1f3e495f-460a-45df-8728-68d703c3daa9" />
 
-*Figure 3. The STARBASE main menu.*
+*Figure 3. The STARBASE STARDEX: No Results Found.*
 
 <img width="572" height="687" alt="Screenshot 2026-11-16 at 3 12 44 PM" src="https://github.com/user-attachments/assets/3d3368e9-31d1-4508-b887-dd38d3034b91" />
 
-*Figure 4. The STARBASE main menu.*
+*Figure 4. The STARBASE STARDEX: The star dataset.*
 
 <img width="503" height="460" alt="Screenshot 2026-11-16 at 3 14 59 PM" src="https://github.com/user-attachments/assets/6203dc61-7145-4fc6-889b-8ab52cbc4156" />
 
-*Figure 5. The STARBASE main menu.*
+*Figure 5. Searching for stars with the Perseus Constellation on STARDEX.*
 
 <img width="1668" height="993" alt="Screenshot 2026-11-16 at 3 15 23 PM" src="https://github.com/user-attachments/assets/3ea58926-023a-409d-8e1d-98c6d875997a" />
 
-*Figure 6. The STARBASE main menu.*
+*Figure 6. The STARBASE completed assignments page.*
