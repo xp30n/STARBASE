@@ -39,7 +39,9 @@ For instance, we created categories for star colours, distances, and brightness 
 
 # SCREENSHOTS
 <img width="472" height="645" alt="image" src="https://github.com/user-attachments/assets/6e985be7-f299-4c04-ba4e-3511c4693800" />
-*Figure 1. Spacecatalog API. The values framed in red were the once we used to determine the star categories*
+
+*Figure 1. Spacecatalog API. The values framed in red were the once we used to determine the star categories* 
+
 <img width="1669" height="998" alt="Screenshot 2026-11-16 at 3 15 40 PM" src="https://github.com/user-attachments/assets/c481bc32-f22e-44c2-95ca-faa6501538d6" />
 *Figure 2. The STARBASE main menu.*
 <img width="503" height="120" alt="Screenshot 2026-11-16 at 3 16 02 PM" src="https://github.com/user-attachments/assets/1f3e495f-460a-45df-8728-68d703c3daa9" />
