@@ -26,19 +26,9 @@
   </div>
 
   <div class="formContainer">
-    <form
-      id="starNameForm"
-      action="{{url_for('submit_assignments')}}"
-      method="post"
-    >
+    <form id="starNameForm" action="{{url_for('submit_assignments')}}" method="post">
       <label>INPUT STAR NAME:</label>
-      <input
-        type="text"
-        maxlength="20"
-        placeholder="SUN"
-        name="input_name"
-        required
-      />
+      <input type="text" maxlength="20" placeholder="SUN" name="input_name" required />
 
       <input type="submit" value="SUBMIT" />
     </form>

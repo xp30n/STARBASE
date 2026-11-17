@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 import random
+import os
+import json
 
 from api.starGuess import fetch_stars, assignStarInfo, randomStarInfo
 from api.spacecatalog import filtered_stars
@@ -82,13 +84,35 @@ def submit_assignments():
 @app.route('/assignmentsDone', methods = ['POST'])
 def did_assignments():
     data = request.get_json()
+    filePath="userDatafiles/starInputData.json"
+    if os.path.exists(filePath):
+        jsonFile = ""
+        app.logger.info("file exists")
+        jsonFile = open(filePath, "r")
+        submittedNamesList = []
+        submittedNamesList = json.load(jsonFile)
+        submittedNamesList.append(session['submittedNames'])
+        jsonFile.close()
+        jsonFile_write = open(filePath, "w")
+        json.dump(submittedNamesList, jsonFile_write, indent =4)
+        jsonFile_write.close()
+        
+    else:
+        app.logger.info("file not exists")
+        #open file for writing
+        jsonFile = open(filePath, "w")
+        inputedNamesList = [session['submittedNames']]
+        json.dump(inputedNamesList, jsonFile, indent =4)
+        jsonFile.close()
 
     button_clicked = data.get('buttonClicked')
 
     if button_clicked and session.get('starMatch'):
+
         session['starMatch'] = False
         session.pop('randomStar')
         session.pop('redacted_fields')
+        session.pop('submittedNames')
         
     return '', 204
 
